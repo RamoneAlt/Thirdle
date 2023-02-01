@@ -1,0 +1,487 @@
+<html>
+    <head>
+        <title>Thirdle</title> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <style>
+body {
+    text-transform: uppercase;
+    font-family:Ranade,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    text-align: center;
+    background-color:  #020a17; 
+    cursor:auto;
+    text-shadow: black -1px 1px;
+    
+}
+
+
+h1 {
+color: whitesmoke;
+text-shadow: rgb(187, 15, 15) -2.5px 2.5px;
+size: 24px;
+letter-spacing: 2px;
+}
+hr {
+    width: 500px;
+    background-color: white;
+    
+}
+.title{
+    font-size: 25px;
+    text-shadow: black -2.75px 2.75px;
+    color: whitesmoke;
+    font-weight: bold;
+    letter-spacing: 17px;
+    
+}
+#board {
+    width: 250px;
+    height: 430px;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tile {
+    /* Box */
+    border: 3px solid grey;
+    width: 60px;
+    height: 45px;
+    margin: 0 auto;
+    border-radius: 20%;
+    box-shadow: white 1px 1px;
+   
+  
+ 
+    /* Text */
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.correct {
+    background-color: #6AAA64;
+    color: whitesmoke;
+    border-color: white;
+    text-shadow: green -1px 1px;
+    border-color: #6AAA64;
+}
+.present {
+    background-color: #C9B458;
+    color: whitesmoke;
+    border-color: white;
+    border-color: #C9B458;
+}
+.absent {
+    background-color: #3a3a3c; 
+    color: whitesmoke;
+    border-color:white;
+    border-color: #3a3a3c;
+    
+}
+            
+.keycorrect {
+    background-color: #6AAA64 !important; 
+    color: whitesmoke;
+    border-color: white;
+    text-shadow: green -1px 1px;
+      width: 36px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+      cursor:pointer;
+    
+        /* Text */
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+.keypresent {
+    background-color: #C9B458  !important;
+    color: whitesmoke;
+    border-color: white;
+      width: 36px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+   
+      cursor:pointer;
+    
+        /* Text */
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+.keyabsent {
+    background-color:  #3a3a3c;
+    color: whitesmoke;
+    border-color:white; 
+    width: 36px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid grey;
+    border-radius: 4px;
+      cursor:pointer;
+    
+        /* Text */
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}      
+ 
+.keyboard-row {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+      cursor:pointer;
+}
+
+.key-tile {
+    width: 35px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    background-color: #818384;
+    
+      cursor:pointer;
+      
+    /* Text */
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.enter-key-tile {
+    width: 74px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid grey;
+      cursor:pointer;
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+.thick-key-tile {
+    width: 54.5px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid grey;
+    border-radius: 4px;
+      cursor:pointer;
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+.top-bar .title {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  letter-spacing: 21px;
+  font-size: 18px;
+  font-weight: bold;
+  color: whitesmoke;
+  float: center;
+  
+}
+.top-bar {
+  background-color: #020a17;
+  font-family: Arial;
+  overflow: hidden;
+  position: sticky;    
+  top: 0;   
+}
+
+.h3 {
+size: 25px;
+color: black;
+text-shadow: rgb(167, 162, 162) -2.5px 2.5px;
+}
+.h2 {
+size: 32px;
+color: black;
+text-shadow: rgb(167, 162, 162) -2.5px 2.5px;
+text-decoration: underline;
+text-decoration-color: rgb(167,162,162);
+}
+
+.ppsmall {
+  font-size: 18px;
+}
+               
+        </style>   
+    </head>
+    <body>
+       <div class="top-bar">
+      <div class="title">» Thirdle « </div>
+  </div>
+      <div id="board">
+        </div>
+        <h1 id="answer"></h1>
+    </body>
+<script>
+
+var height = 7; //number of guesses
+var width = 3; //length of the word
+
+var row = 0; //current guess (attempt #)
+var col = 0; //current letter for that attempt
+
+var gameOver = false;
+// var word = "OUTPOST";
+var wordList = ["dog", "cat", "man", "mob", "dam", "car", "lap", "fan", "tar", "oil", "bum", "wet", "art", "fat", "mat", "bat", "pan", "tan", "new", "pew", "sew", "toy", "lob", "and", "fix", "own", "are", "fly", "odd", "ape", "fry", "our", "ace", "for", "pet", "act", "got", "pat", "ask", "get", "peg", "arm", "god", "paw", "age", "gel", "pup", "ago", "gas", "pit", "air", "hat", "put", "ate", "hit", "pot", "has", "pop", "but", "had", "pin", "bye", "how", "rat", "bad", "her", "rag", "big", "his", "rub", "bed", "hen", "row", "bat", "ink", "rug", "boy", "ice", "run", "bus", "rap", "bag", "jab", "ram", "box", "jug", "sow", "bit", "jet", "see", "bee", "jam", "saw", "buy", "jar", "set", "bun", "job", "sit", "cub", "jog", "sir", "cat", "kit", "sat", "car", "key", "sob", "cut", "lot", "tap", "cow", "lit", "tip", "cry", "let", "top", "cab", "lay", "tug", "can", "mat", "tow", "dad", "man", "toe", "dab", "mad", "tan", "dam", "mug", "ten", "did", "mix", "two", "dug", "map", "use", "den", "mum", "van", "dot", "mud", "vet", "dip", "mom", "was", "day", "may", "wet", "ear", "met", "win", "eye", "net", "won", "eat", "new", "wig", "end", "nap", "war", "elf", "now", "why", "egg", "nod", "who", "far", "net", "way", "fat", "not", "wow", "few", "nut", "you", "fan", "oar", "yes", "fun", "one", "yak", "fit", "out", "yet", "fin", "owl", "zip", "fox", "old", "zap", "tin", "leg", "zip", "box", "rad", "law", "rat", "peg", "jet", "lap", "van", "owl", "saw", "sun", "pee", "wag", "ton", "vat", "yet", "win", "fun", "tag", "top", "rib", "met", "bee", "who", "dam", "tea", "fog", "red", "fun", "all", "bus", "gap", "row", "sin", "pad", "gum", "owl", "pat", "pan", "mop", "rum", "tar", "art", "gap", "web", "hay", "hen", "den", "sob", "wow", "bar", "fly", "oil", "dug", "ten", "lit", "cow", "arm", "ear", "paw", "fur", "fit", "jab", "van", "set", "end", "tow", "try", "rap", "win", "mix", "his", "key", "net", "yak", "dog", "act", "lie", "pee", "fog", "bad", "bag", "soy", "rib", "led", "tap", "lit", "owl", "oil", "rig", "zip", "hay", "rob", "big", "fat", "sir", "oak", "mar", "cog", "con", "fly", "ice", "sin", "fin", "elk", "eye", "cop", "pig", "lug", "lip", "tip", "nip", "why", "bun", "run", "ran", "rum", "she", "sad", "day", "pay", "lay", "may", "nay", "jay"]
+
+
+//list of words that can be answer ^ list of words that can be used v
+
+var guessList = ["tax", "fur", "peg", "bee", "pig", "wet", "lab", 
+"red", "rig", "van", "cup", "pot", "top", "lit", "kit", "sum", "air", "rat", "box", "dog", "gun", "lit", "pam", "jet", "sin", "hub", "wad", "fog", "net", "pop", "yes", "fun", "row", "yap", "dam", "kit", "saw", "tug", "bat", "fad", "led", "pay", "fit", "pan", "rig", "lit", "ton", "egg", "dot", "leg", "jaw", "got", "gym", "pie", "nap", "owl", "jet", "ten", "key", "sun", "tub", "bat", "gym", "yen", "yak", "nut", "pat", "pen", "pie", "pet", "pop", "ray", "set", "tap", "yum", "rim", "soy", "row", "jib", "jot", "jud", "jug", "jun", "jut", "key", "kid", "kin", "kit", "lab", "lap", "law", "lea", "led", "leg", "let", "lib", "lid", "lie", "lip", "lit", "log", "lot", "low", "mad", "man", "map", "mar", "mat", "med", "met", "mew", "mix", "mob", "mod", "mog", "mol", "mon", "mop", "mow", "mud", "mug", "nab", "nag", "nap", "new", "nib", "nil", "nip", "nob", "nod", "non", "nor", "not", "now", "nut", "oaf", "oak", "oar", "oat", "odd", "off", "oft", "ohm", "oil", "old", "one", "ope", "opt", "orb", "ore", "our", "out", "owe", "owl", "own", "pad", "pal", "pan", "par", "pat", "paw", "pay", "pea", "peg", "pen", "per", "pet", "pew", "phi", "pic", "pie", "pig", "pin", "pit", "ply", "pod", "pop", "pot", "pow", "pro", "pry", "pub", "pup", "put", "rad", "rag", "ram", "ran", "rat", "raw", "ray", "red", "rib", "rid", "rig", "rim", "rip", "rob", "rod", "rot", "row", "rub", "rue", "rug", "rum", "run", "rye", "sad", "sag", "sal", "sam", "sap", "sat", "saw", "say", "sea", "see", "set", "sew", "sex", "she", "shy", "sib", "sin", "sip", "sir", "sit", "six", "sky", "sob", "sod", "sol", "son", "sop", "sow", "soy", "spy", "sty", "sub", "sue", "sun", "sup", "tab", "tad", "tag", "tan", "tap", "tar", "tea", "ted", "ten", "the", "tie", "tin", "tip", "tod", "toe", "ton", "top", "tow", "toy", "try", "tub", "tug", "two", "tye", "ugh", "ump", "uns", "upo", "urn", "use", "van", "vat", "vet", "vow", "wad", "wag", "wan", "war", "was", "way", "web", "wet", "who", "why", "wig", "win", "wit", "wok", "won", "woo", "wow", "wry", "yak", "yam", "yap", "yaw", "yea", "yes", "yet", "yew", "ban", "bat", "bey", "bid", "bud", "bug", "bun", "bus", "but", "byr", "cab", "cub", "deb", "dib", "dub", "ebb", "eft", "fab", "fib", "hub", "bet", "cap", "oak", "mar", "bin", "rim", "low", "wig", "too", "sop", "sob", "sol", "sow", "sod", "lop", "pen", "guy", "got", "mug", "mud", "him", "her", "his", "the", "and", "can", "won", "cop", "pig", "lug", "lip", "tip", "nip", "why", "bun", "run", "ran", "rum", "she", "sad", "day", "pay", "lay", "may", "nay", "jay", "dab", "den", "fig", "fin", "sin", "cwm", "dig", "doe", "doc", "dot", "dow", "due", "duo", "dye", "ear", "eat", "eel", "elf", "egg", "eve", "toe", "fax", "fed", "fee", "fib", "fir", "fox", "gag", 
+"eek",]
+
+guessList = guessList.concat(wordList);
+
+var word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
+console.log(word); 
+
+window.onload = function(){
+    intialize();
+}
+
+
+function intialize() {
+
+    // Create the game board
+    for (let r = 0; r < height; r++) {
+        for (let c = 0; c < width; c++) {
+            // <span id="0-0" class="tile">P</span>
+            let tile = document.createElement("span");
+            tile.id = r.toString() + "-" + c.toString();
+            tile.classList.add("tile");
+            tile.innerText = "";
+            document.getElementById("board").appendChild(tile);
+        }
+    }
+
+    // Create the key board
+    let keyboard = [
+        ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+        ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
+        ["Enter", "Z", "X", "C", "V", "B", "N", "M", "⌫"]
+    ]
+
+    for (let i = 0; i < keyboard.length; i++) {
+        let currRow = keyboard[i];
+        let keyboardRow = document.createElement("div");
+        keyboardRow.classList.add("keyboard-row");
+
+        for (let j = 0; j < currRow.length; j++) {
+            let keyTile = document.createElement("div");
+
+            let key = currRow[j];
+            keyTile.innerText = key;
+            if (key == "Enter") {
+                keyTile.id = "Enter";
+            }
+            else if (key == "⌫") {
+                keyTile.id = "Backspace";
+            }
+            else if ("A" <= key && key <= "Z") {
+                keyTile.id = "Key" + key; // "Key" + "A";
+            } 
+
+            keyTile.addEventListener("click", processKey);
+            
+            if (key == "L") {
+                keyTile.classList.add("thick-key-tile");
+            } else {
+                keyTile.classList.add("key-tile");
+            }
+            if (key == "A") {
+                keyTile.classList.add("thick-key-tile");
+            } else {
+                keyTile.classList.add("key-tile");
+            }
+             if (key == "Enter") {
+                keyTile.classList.add("enter-key-tile");
+            } else {
+                keyTile.classList.add("key-tile");
+            }
+         
+            keyboardRow.appendChild(keyTile);
+        }
+        document.body.appendChild(keyboardRow);
+    }
+    
+
+    // Listen for Key Press
+    document.addEventListener("keyup", (e) => {
+        processInput(e);
+    })
+}
+
+function processKey() {
+    e = { "code" : this.id };
+    processInput(e);
+}
+
+function processInput(e) {
+    if (gameOver) return; 
+
+    // alert(e.code);
+    if ("KeyA" <= e.code && e.code <= "KeyZ") {
+        if (col < width) {
+            let currTile = document.getElementById(row.toString() + '-' + col.toString());
+            if (currTile.innerText == "") {
+                currTile.innerText = e.code[3];
+                col += 1;
+            }
+        }
+    }
+    else if (e.code == "Backspace") {
+        if (0 < col && col <= width) {
+            col -=1;
+        }
+        let currTile = document.getElementById(row.toString() + '-' + col.toString());
+        currTile.innerText = "";
+    }
+
+    else if (e.code == "Enter") {
+        update();
+    }
+
+    if (!gameOver && row == height) {
+        gameOver = true;
+        document.getElementById("answer").innerText = word;
+
+
+        
+        row += 1; //go to start
+        col = 0; //start at 0 for new row
+    }
+}
+
+
+function update() {
+    let guess = "";
+    document.getElementById("answer").innerText = "";
+
+    //string up  guesses into the word o.o
+    for (let c = 0; c < width; c++) {
+        let currTile = document.getElementById(row.toString() + '-' + c.toString());
+        let letter = currTile.innerText;
+        guess += letter;
+    }
+
+    guess = guess.toLowerCase(); 
+    console.log(guess);
+    if (!guessList.includes(guess)) {
+    
+        document.getElementById("answer").innerHTML = "<span style='color: white; font-size: 17px; letter-spacing: 2px;'> Not On Word List!</span>";
+      
+        setTimeout(function(){ 
+      document.getElementById("answer").innerHTML = "";
+  }, 2250);
+        return;
+    }
+    
+    
+       //start processing guess
+    let correct = 0;
+
+    let letterCount = {}; //keep track of letter frequency, ex) PIZZAZZ -> {P:1, I:1, Z:4, A: 1}
+    for (let i = 0; i < word.length; i++) {
+        let letter = word[i];
+
+        if (letterCount[letter]) {
+           letterCount[letter] += 1;
+        } 
+        else {
+           letterCount[letter] = 1;
+        }
+    }
+
+    console.log(letterCount);
+
+    //first iteration, check all the correct ones first
+    for (let c = 0; c < width; c++) {
+        let currTile = document.getElementById(row.toString() + '-' + c.toString());
+        let letter = currTile.innerText;
+
+        //Is it in the correct position?
+        if (word[c] == letter) {
+            currTile.classList.add("correct");
+
+            let keyTile = document.getElementById("Key" + letter);
+            keyTile.classList.remove("keypresent");
+             keyTile.classList.remove("key-tile"); //change back bhere<<
+            keyTile.classList.add("keycorrect");
+
+            correct += 1;
+            letterCount[letter] -= 1; //deduct the letter count
+        }
+
+        if (correct == width) {
+            gameOver = true;
+        }
+    }
+
+    console.log(letterCount);
+    //go again and mark which ones are present but in wrong position
+    for (let c = 0; c < width; c++) {
+        let currTile = document.getElementById(row.toString() + '-' + c.toString());
+        let letter = currTile.innerText;
+
+        // skip the letter if it has been marked correct
+        if (!currTile.classList.contains("correct")) {
+            //Is it in the word?         //make sure we don't double count
+            if (word.includes(letter) && letterCount[letter] > 0) {
+                currTile.classList.add("present");
+                
+                let keyTile = document.getElementById("Key" + letter);
+                if (!keyTile.classList.contains("keycorrect")) {
+		    keyTile.classList.remove("key-tile");
+                    keyTile.classList.add("keypresent");
+                }
+                letterCount[letter] -= 1;
+            }	 // not in the word or (was in word but letters all used up to avoid overcount)
+            else {
+                currTile.classList.add("absent");
+                let keyTile = document.getElementById("Key" + letter);
+								keyTile.classList.remove("key-tile")
+                keyTile.classList.add("keyabsent")
+            }
+        }
+    }
+
+    row += 1; //start new row
+    col = 0; //start at 0 for new row
+}
+</script>
+</html>
